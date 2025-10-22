@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { PlusCircle } from "lucide-react";
 import { LinksTable } from "./components/links-table";
 import type { Link as LinkType } from "@/lib/data";
-import { useSupabase } from '@/supabase/provider';
+import { useSupabase } from '@/lib/provider';
 
 export default function LinksPage() {
   const { supabase } = useSupabase();

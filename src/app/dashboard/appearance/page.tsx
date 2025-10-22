@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { AppearanceForm } from './components/appearance-form';
 import { LinkPreview } from './components/link-preview';
 import type { Profile, Link as LinkType } from "@/lib/data";
-import { useSupabase } from '@/supabase/provider';
+import { useSupabase } from '@/lib/provider';
 
 export default function AppearancePage() {
     const { supabase } = useSupabase();
