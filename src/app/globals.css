@@ -93,7 +93,7 @@
     background-image: linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
     background-size: 40px 40px;
     filter: opacity(0.3);
-    animation: pan-background 45s linear infinite;
+    animation: pan-background 45s linear forwards;
     z-index: -1;
   }
   .animated-grid-background::after {
