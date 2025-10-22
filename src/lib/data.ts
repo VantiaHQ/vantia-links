@@ -1,6 +1,7 @@
 import type { ComponentType } from "react";
-import { Calendar1, CircleDollarSignIcon, Github, Globe, Linkedin, Mail, Twitter } from "lucide-react";
+import { Calendar1, CircleDollarSignIcon, Github, Globe, Linkedin, Mail, Twitter, ScanSearch } from "lucide-react";
 import type { SupabaseLink } from "./types";
+import { link } from "fs";
 
 export type Link = {
   id: string;
@@ -19,12 +20,10 @@ export type Profile = {
 
 const iconMapping: { [key: string]: ComponentType<{ className?: string }> } = {
   consultor: Calendar1,
+  analisis: ScanSearch,
   calculadora: CircleDollarSignIcon,
   web: Globe,
   linkedin: Linkedin,
-  github: Github,
-  mail: Mail,
-  twitter: Twitter,
 };
 
 export const getIcon = (iconName: string): ComponentType<{ className?: string }> => {
@@ -58,6 +57,14 @@ export const linksData: Link[] = [
     createdAt: "2025-10-21",
   },
   {
+    id: "analisis",
+    title: "Analiza tu Caso",
+    url: "https://vantia-frontend.vercel.app/generar-agente",
+    Icon: ScanSearch,
+    clicks: 0,
+    createdAt: "2025-10-21",
+  },
+  {
     id: "calculadora",
     title: "Calcula tu Ahorro",
     url: "https://vantia-frontend.vercel.app/calculadora-ahorro",
@@ -81,14 +88,6 @@ export const linksData: Link[] = [
     clicks: 0,
     createdAt: "2025-10-21",
   },
-  {
-    id: "github",
-    title: "Contribuye en GitHub",
-    url: "https://github.com/VantiaHQ",
-    Icon: Github,
-    clicks: 0,
-    createdAt: "2025-10-21",
-  },
 ];
 
 export const analyticsData = {
@@ -96,8 +95,6 @@ export const analyticsData = {
   totalClicks: linksData.reduce((acc, link) => acc + link.clicks, 0),
   linkPerformance: linksData.map(link => ({ name: link.title, clicks: link.clicks })),
   viewsByDate: [
-    { date: '2025-10-21', views: 0 },
-    { date: '2025-10-21', views: 0 },
     { date: '2025-10-21', views: 0 },
     { date: '2025-10-21', views: 0 },
     { date: '2025-10-21', views: 0 },
