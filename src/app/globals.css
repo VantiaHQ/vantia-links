@@ -96,6 +96,12 @@
     animation: pan-background 45s linear forwards;
     z-index: -1;
   }
+
+  @media (prefers-reduced-motion) {
+    .animated-grid-background::before {
+      animation: none;
+    }
+  }
   .animated-grid-background::after {
     content: '';
     @apply absolute inset-0 h-full w-full;
