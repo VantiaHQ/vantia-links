@@ -17,16 +17,17 @@ export function AnalyticsChart({ data }: { data: { name: string; clicks: number 
       <CardHeader>
         <CardTitle className="text-3xl font-medium text-muted-foreground">Clics por Enlace </CardTitle>
       </CardHeader>
-      <CardContent>
-        <ChartContainer config={chartConfig} className="min-h-[350px] w-full">
+      <CardContent className="p-2 sm:p-6">
+        <ChartContainer config={chartConfig} className="h-[350px] w-full min-w-0">
           <BarChart accessibilityLayer data={data}>
             <XAxis
               dataKey="name"
               stroke="hsl(var(--muted-foreground))"
-              fontSize={14}
+              fontSize={8}
               tickLine={false}
               axisLine={false}
               tickFormatter={(value) => value.slice(0, 10) + (value.length > 10 ? '...' : '')}
+              padding={{ left: 0 }}
             />
             <YAxis
               stroke="hsl(var(--muted-foreground))"
@@ -34,6 +35,7 @@ export function AnalyticsChart({ data }: { data: { name: string; clicks: number 
               tickLine={false}
               axisLine={false}
               tickFormatter={(value) => `${value}`}
+              width={30}
             />
             <ChartTooltip
               cursor={{ fill: 'hsl(var(--muted))' }}
