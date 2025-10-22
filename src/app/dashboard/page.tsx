@@ -51,7 +51,7 @@ export default function DashboardPage() {
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         <AnalyticsChart data={linksData.map(link => ({ name: link.id, clicks: link.clicks }))} />
-        <Card className="max-w-screen">
+        <Card>
           <CardHeader>
             <CardTitle className="text-3xl text-muted-foreground font-medium">Vistas por Enlace</CardTitle>
           </CardHeader>
